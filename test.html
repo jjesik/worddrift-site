@@ -12,53 +12,77 @@
       background: linear-gradient(135deg, #3da4f0, #0099ff);
       color: white;
       text-align: center;
+      overflow: hidden;
     }
+
     .container {
+      opacity: 0;
+      transform: translateY(60px);
+      animation: fadeInUp 1.2s ease-out forwards;
       max-width: 800px;
       margin: 0 auto;
-      padding: 100px 20px;
+      padding: 140px 20px;
     }
-    .logo-text {
+
+    .logo {
       font-size: 48px;
       font-weight: 700;
-      letter-spacing: -1px;
       margin-bottom: 8px;
     }
+
+    .logo span {
+      font-weight: 400;
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, white 30%, transparent 100%);
+      animation: underlineSlide 1.8s ease-out forwards;
+    }
+
     .tagline {
       font-size: 20px;
-      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+      animation-delay: 1.2s;
     }
-    .store-badge {
-      height: 60px;
-      margin-bottom: 40px;
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .support-button {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: white;
-      color: #187abf;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      font-size: 16px;
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes underlineSlide {
+      from {
+        width: 0%;
+      }
+      to {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="logo-text">Word<span style="font-weight: 400;">Drift</span></div>
+    <div class="logo">
+      Word<span>Drift</span>
+    </div>
     <div class="tagline">Strategic Word Puzzle</div>
-
-    <!-- App Store link placeholder -->
-    <a href="#">
-      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-           alt="Download on the App Store"
-           class="store-badge" />
-    </a>
-
-    <br />
-
-    <a href="mailto:support@worddrift.app" class="support-button">Contact Support</a>
   </div>
 </body>
 </html>
