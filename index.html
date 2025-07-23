@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #224b8f, #3c84d6);
+      background: linear-gradient(to bottom right, #1e3a8a, #3b82f6); /* Vivid blue gradient */
       color: white;
       display: flex;
       flex-direction: column;
@@ -20,38 +20,14 @@
     }
 
     .logo-container {
-      display: flex;
-      gap: 6px;
-      align-items: baseline;
-      font-size: 60px;
       opacity: 0;
       transform: scale(0.8);
       animation: fadeInScale 1s ease-out forwards;
     }
 
-    .logo-light {
-      font-weight: 300;
-      position: relative;
-    }
-
-    .logo-light::after {
-      content: "";
-      position: absolute;
-      left: -200px;
-      bottom: -10px;
-      width: 150px;
-      height: 3px;
-      background: linear-gradient(to right, transparent, rgba(255,255,255,0.8), transparent);
-      animation: underlineMove 3s ease-in-out forwards 1s;
-      opacity: 0;
-      animation-delay: 1s;
-    }
-
-    .subtitle {
-      font-size: 18px;
-      margin-top: 8px;
-      opacity: 0;
-      animation: fadeIn 1s ease-in forwards 1.2s;
+    .logo-container img {
+      width: 480px;
+      height: auto;
     }
 
     .button-container {
@@ -75,10 +51,14 @@
       color: white;
       border: 1px solid white;
       border-radius: 10px;
-      padding: 12px 24px;
+      width: 180px;
+      height: 48px;
       font-size: 16px;
       cursor: pointer;
       transition: background 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .support-button:hover {
@@ -92,13 +72,6 @@
       }
     }
 
-    @keyframes underlineMove {
-      to {
-        left: 200px;
-        opacity: 1;
-      }
-    }
-
     @keyframes fadeIn {
       to {
         opacity: 1;
@@ -107,13 +80,12 @@
   </style>
 </head>
 <body>
-<div class="logo-container">
-  <img src="worddrift-logo.png" alt="WordDrift Logo" style="width: 320px; height: auto;" />
-</div>
-  <div class="subtitle">Strategic Word Puzzle</div>
+  <div class="logo-container">
+    <img src="worddrift-logo.png" alt="WordDrift Logo" style="width: 540px; height: auto;" />
+  </div>
 
   <div class="button-container">
-    <!-- App Store Icon (replace link with your actual app link) -->
+    <!-- App Store Icon (replace with your real link) -->
     <a href="https://apps.apple.com" class="app-store-button">
       <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
     </a>
@@ -125,3 +97,4 @@
   </div>
 </body>
 </html>
+
