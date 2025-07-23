@@ -20,35 +20,36 @@
   }
 
 .logo-container {
-  width: 640px;
-  max-width: 90vw;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   opacity: 0;
   transform: scale(0.8);
   animation: fadeInScale 1s ease-out forwards;
 }
 
-  .logo-wrapper {
-    position: relative;
-    width: 640px;
-    height: auto;
-  }
+.logo-wrapper {
+  position: relative;
+  width: 640px;
+  max-width: 90vw;
+}
 
-  .logo-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+.logo-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
   .underline {
-    position: absolute;
-    bottom: 14px; /* adjust for logo baseline */
-    left: 68%;    /* starting position of "Drift" */
-    width: 28%;
-    height: 3px;
-    background: linear-gradient(to right, transparent, rgba(255,255,255,0.8), transparent);
-    opacity: 0;
-    animation: underlineSlide 2.2s ease-out forwards 1s;
-  }
+  position: absolute;
+  bottom: 12px; /* tweak if too high/low */
+  left: 68%;    /* where “Drift” starts */
+  width: 28%;   /* width of underline */
+  height: 3px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.8), transparent);
+  opacity: 0;
+  animation: underlineSlide 2.2s ease-out forwards 1s;
+}
 
   @keyframes underlineSlide {
     0% {
@@ -61,7 +62,7 @@
     }
     100% {
       left: 68%;
-      width: 30%;
+      width: 28%;
       opacity: 1;
     }
   }
@@ -117,8 +118,11 @@
 </head>
 <body>
   <div class="logo-container">
-    <img src="worddrift-logo.png" alt="WordDrift Logo" style="width: 680px; height: auto;" />
+  <div class="logo-wrapper">
+    <img src="worddrift-logo.png" alt="WordDrift Logo" />
+    <div class="underline"></div>
   </div>
+</div>
 
   <div class="button-container">
     <!-- App Store Icon (replace with your real link) -->
