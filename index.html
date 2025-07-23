@@ -30,25 +30,27 @@
 
 .logo-wrapper {
   position: relative;
-  width: 640px;
-  max-width: 90vw;
+  display: inline-block;
+  animation: fadeInScale 1s ease-out forwards;
 }
 
 .logo-wrapper img {
-  width: 100%;
+  width: 640px; /* or whatever final size you chose */
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
-  .underline {
+.underline {
   position: absolute;
-  bottom: 12px; /* tweak if too high/low */
-  left: 68%;    /* where “Drift” starts */
-  width: 28%;   /* width of underline */
+  bottom: 40px; /* adjust upward/downward as needed */
+  left: 58%;     /* adjust leftward/rightward as needed */
+  width: 90px;   /* tune this to match “Drift” width visually */
   height: 3px;
   background: linear-gradient(to right, transparent, rgba(255,255,255,0.8), transparent);
   opacity: 0;
-  animation: underlineSlide 2.2s ease-out forwards 1s;
+  animation: underlineMove 2.5s ease-in-out forwards 1s;
+  border-radius: 2px;
 }
 
   @keyframes underlineSlide {
