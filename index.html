@@ -43,13 +43,19 @@
 
 .underline {
   position: absolute;
-  bottom: 48px; /* Adjust vertical alignment */
-  left: 52%; /* Start around under "Drift" */
-  width: 50px; /* Length of line */
+  bottom: 48px; /* Adjust to sit just below "Drift" */
+  left: 52%;
+  transform: translateX(-50%); /* Center the line under logo */
+  width: 100px; /* Adjust width to match "Drift" visually */
   height: 3px;
-  background: linear-gradient(to right, rgba(255,255,255,0.8), transparent);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
   opacity: 0;
-  animation: slideFade 2.2s ease-out forwards 1s;
+  animation: fadeGrow 2s ease-out forwards 1s;
   border-radius: 2px;
 }
 
