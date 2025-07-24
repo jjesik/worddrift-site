@@ -43,27 +43,30 @@
 
 .underline {
   position: absolute;
-  bottom: 24px; /* Move closer to logo */
-  left: 50%;
-  transform: translateX(40px); /* Nudge right under “Drift” */
-  width: 100px;
+  bottom: 18px; /* Adjust vertical alignment */
+  left: 58%; /* Start around under "Drift" */
+  width: 90px; /* Length of line */
   height: 3px;
   background: linear-gradient(to right, rgba(255,255,255,0.8), transparent);
   opacity: 0;
-  animation: fadeGrow 2s ease-out forwards 1s;
+  animation: slideFade 2.2s ease-out forwards 1s;
   border-radius: 2px;
 }
 
-  @keyframes fadeGrow {
+@keyframes slideFade {
   0% {
+    transform: translateX(0);
     opacity: 0;
-    width: 0px;
+  }
+  30% {
+    opacity: 1;
   }
   100% {
-    opacity: 1;
-    width: 100px;
+    transform: translateX(60px); /* How far right to slide */
+    opacity: 0; /* Fades out */
   }
 }
+
 
   .button-container {
     margin-top: 48px;
